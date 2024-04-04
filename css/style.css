@@ -1,0 +1,126 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #dbd5d5;
+    padding: 5px;
+    margin: 15px;
+    font-size: 25px;
+    font-family:Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-family:Arial, sans-serif;
+}
+
+h2{
+    text-align:center;
+   
+  
+  }
+
+img{
+    border: 5px solid rgb(81, 81, 83);
+    border-radius: 35px;
+    color: white;
+    width: 100%;
+  }
+
+.text {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 10px;
+    margin: 10px;
+    font-size: 1rem;  
+}
+
+/* Responsove grid / 1 column / mobile first */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;  
+    background-color: #605252;
+    border: 6px solid rgb(119, 113, 113);
+    color: white; 
+    text-align: center;  
+}
+
+/* Tablet trigger point to change into 2 column grid*/
+
+@media screen and (min-width: 772px) {
+   .grid {
+    grid-template-columns: 1fr 1fr;
+    background-color: rgb(87, 1, 1);
+    color: rgb(226, 190, 154);
+    border-color:  rgb(163, 130, 97);
+   }
+   
+   /* Circle shape images */
+    figure img {
+    border-radius: 50%;
+    border-color: rgb(163, 130, 97);
+   }
+   
+   /* larger text and line height */
+    .text  {
+        font-size: 1.2rem;
+        line-height: 1.2;
+   }
+
+   /* Target last image and span into 2 columns */
+   .grid figure:last-child {
+    grid-column: 1 / span 2;  
+}
+
+}
+
+/* Large screen trigger point */
+ @media  (min-width: 992px) {
+
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        background-color: rgb(35, 30, 55);
+        border-color:  rgb(141, 138, 150);
+        color: rgb(255, 111, 0);
+       }
+
+    /* Remove border radius */
+    figure img {
+        border-radius: 0%;
+        border-color:   rgb(141, 138, 150);
+    }
+    
+    /* Target every third image and span into 2 columns */
+    .grid figure:nth-child(3n) {
+        grid-column: 1 / span 2;
+    }
+ }
+
+ /* Prefers-reduced-motion. Remove scroll bar if animation disabled  */
+ @media (prefers-reduced-motion) {
+    body {
+        overflow: hidden;
+    }
+} 
+ 
+/* Prefers-color-scheme */
+ @media (prefers-color-scheme: dark) {
+ figure {
+        background-color:  #08415c;
+        border: 4px solid rgb(16, 16, 16);
+        color: yellow;    
+    } 
+    
+   figure img {
+    border: 4px solid  #204557;
+    width: 90%;
+    height: 80%;
+   
+   }
+
+  .grid {
+    border-color: rgb(0, 0, 0);
+  }
+
+ }
